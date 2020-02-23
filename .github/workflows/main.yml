@@ -3,7 +3,7 @@ name: PR-Lint
 on:
   pull_request:
     types: ['opened', 'edited', 'reopened', 'synchronize']
-  branchs: develop
+    
 jobs:
   lint-it:
     runs-on: ubuntu-latest
