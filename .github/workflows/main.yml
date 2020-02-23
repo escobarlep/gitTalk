@@ -1,0 +1,14 @@
+name: PR-Lint
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'reopened', 'synchronize']
+    
+jobs:
+  lint-it:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: seferov/pr-lint-action@master
+      with:
+        title-regex: "^FEAT|FIX|BUG|REFACT|WIP|DEPLOY*"
+        on-failed-regex-comment: "This is just an example. Failed regex: `%regex%`! "
