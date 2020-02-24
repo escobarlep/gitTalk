@@ -2,7 +2,7 @@ name: pr-lint
 
 on:
   pull_request:
-    types: ['opened', 'edited', 'reopened', 'synchronize', 'labeled']
+    types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
   build:
@@ -11,5 +11,5 @@ jobs:
       - name: lint-on-self-runner
         uses: seferov/pr-lint-action@master
         with:
-          title-regex: "^\[FEAT|FIX|BUG|REFACT|WIP|DEPLOY\]*"
+          title-regex: "^\[[FEAT|FIX|BUG|REFACT|WIP|DEPLOY]\]*"
           on-failed-regex-comment: "Failed regex: `%regex%`! "
